@@ -64,6 +64,7 @@
 		AC8F5A2C1538F94100A9B0AA /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC8F5A2A1538F94100A9B0AA /* CoreAudio.framework */; };
 		ACF86E19152F86D4004A80BC /* AJNCConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF86E18152F86D3004A80BC /* AJNCConstants.m */; };
 		ACFCF7831566A4F800BC922D /* SConscript in Resources */ = {isa = PBXBuildFile; fileRef = ACFCF7821566A4F800BC922D /* SConscript */; };
+		F41488EF1889B3760006206B /* libAllJoynFramework_iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F41488EE1889B3760006206B /* libAllJoynFramework_iOS.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -181,6 +182,7 @@
 		AC8F5A2A1538F94100A9B0AA /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		ACF86E18152F86D3004A80BC /* AJNCConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AJNCConstants.m; sourceTree = "<group>"; };
 		ACFCF7821566A4F800BC922D /* SConscript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SConscript; sourceTree = "<group>"; };
+		F41488EE1889B3760006206B /* libAllJoynFramework_iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libAllJoynFramework_iOS.a; path = "../../../../../../Library/Developer/Xcode/DerivedData/alljoyn_darwin-gkcekolnxcgmpudkbsvsazqpuqvk/Build/Products/Debug-iphoneos/libAllJoynFramework_iOS.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +190,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F41488EF1889B3760006206B /* libAllJoynFramework_iOS.a in Frameworks */,
 				AC8F5A2B1538F94100A9B0AA /* AudioToolbox.framework in Frameworks */,
 				AC8F5A281538F91400A9B0AA /* AVFoundation.framework in Frameworks */,
 				AC8F5A2C1538F94100A9B0AA /* CoreAudio.framework in Frameworks */,
@@ -236,6 +239,7 @@
 		AC67D65B152CAFC4009DBFA9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F41488EE1889B3760006206B /* libAllJoynFramework_iOS.a */,
 				AC7DDE5915DC3B8700BAA0DE /* SystemConfiguration.framework */,
 				AC8F5A291538F94100A9B0AA /* AudioToolbox.framework */,
 				AC8F5A2A1538F94100A9B0AA /* CoreAudio.framework */,
@@ -583,7 +587,8 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Hao Wang (A39T4W623E)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hao Wang (A39T4W623E)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -609,7 +614,8 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Hao Wang (A39T4W623E)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hao Wang (A39T4W623E)";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -631,11 +637,14 @@
 					"$(ARCHS_STANDARD_32_BIT)",
 					armv7,
 				);
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Hao Wang (A39T4W623E)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hao Wang (A39T4W623E)";
 				GCC_ENABLE_CPP_EXCEPTIONS = NO;
 				GCC_ENABLE_CPP_RTTI = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AllJoynChat/AllJoynChat-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = "OPENSSL_ROOT=/Users/wshu_cn/openssl";
+				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = "OPENSSL_ROOT=~/openssl";
 				HEADER_SEARCH_PATHS = (
 					"\"$(SRCROOT)/../../../../alljoyn_core/build/darwin/arm/$(PLATFORM_NAME)/$(CONFIGURATION)/dist/cpp/inc/alljoyn\"",
 					"\"$(SRCROOT)/../../../../alljoyn_core/build/darwin/arm/$(PLATFORM_NAME)/$(CONFIGURATION)/dist/cpp/inc\"",
@@ -644,8 +653,9 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(OPENSSL_ROOT)/build/$(CONFIGURATION)-$(PLATFORM_NAME)\"",
+					"\"/Users/wshu_cn/openssl/build/$(CONFIGURATION)-$(PLATFORM_NAME)\"",
 					"\"$(SRCROOT)/../../../../alljoyn_core/build/darwin/$(CURRENT_ARCH)/$(PLATFORM_NAME)/$(CONFIGURATION)/dist/cpp/lib\"",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/alljoyn_darwin-gkcekolnxcgmpudkbsvsazqpuqvk/Build/Products/Debug-iphoneos",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = (
@@ -674,10 +684,12 @@
 					"$(ARCHS_STANDARD_32_BIT)",
 					armv7,
 				);
+				CODE_SIGN_IDENTITY = "iPhone Developer: Hao Wang (A39T4W623E)";
 				GCC_ENABLE_CPP_EXCEPTIONS = NO;
 				GCC_ENABLE_CPP_RTTI = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AllJoynChat/AllJoynChat-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = "OPENSSL_ROOT=/Users/wshu_cn/openssl";
 				HEADER_SEARCH_PATHS = (
 					"\"$(SRCROOT)/../../../../alljoyn_core/build/darwin/arm/$(PLATFORM_NAME)/$(CONFIGURATION)/dist/cpp/inc/alljoyn\"",
 					"\"$(SRCROOT)/../../../../alljoyn_core/build/darwin/arm/$(PLATFORM_NAME)/$(CONFIGURATION)/dist/cpp/inc\"",
@@ -689,6 +701,7 @@
 					"\"$(SRCROOT)/../../../../alljoyn_core/build/darwin/arm/$(PLATFORM_NAME)/$(CONFIGURATION)/dist/cpp/lib\"",
 					"\"$(OPENSSL_ROOT)/build/$(CONFIGURATION)-$(PLATFORM_NAME)\"",
 					"\"$(SRCROOT)/../../../../alljoyn_core/build/darwin/$(CURRENT_ARCH)/$(PLATFORM_NAME)/$(CONFIGURATION)/dist/cpp/lib\"",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/alljoyn_darwin-gkcekolnxcgmpudkbsvsazqpuqvk/Build/Products/Debug-iphoneos",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = (
